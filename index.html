@@ -1,300 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>8-Week Computer & Frontend Development Course</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-Week Computer & Frontend Development Course</title>
 
-<style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        body {
+            font-family: Segoe UI, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
 
-body{
-    font-family:Segoe UI, sans-serif;
-    background:#f5f7fb;
-    color:#1f2937;
-    line-height:1.6;
-}
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
 
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:40px 20px;
-}
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-header{
-    text-align:center;
-    margin-bottom:40px;
-}
+        header h1 {
+            font-size: 2.4rem;
+            color: #1e3a8a;
+        }
 
-header h1{
-    font-size:2.4rem;
-    color:#1e3a8a;
-}
+        header p {
+            color: #64748b;
+            margin-top: 10px;
+        }
 
-header p{
-    color:#64748b;
-    margin-top:10px;
-}
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
 
-.summary{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
-    margin-bottom:40px;
-}
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, .08);
+        }
 
-.card{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
-}
+        .card h3 {
+            margin-bottom: 10px;
+        }
 
-.card h3{
-    margin-bottom:10px;
-}
+        .timeline {
+            border-left: 4px solid #2563eb;
+            padding-left: 35px;
+        }
 
-.timeline{
-    border-left:4px solid #2563eb;
-    padding-left:35px;
-}
+        .day {
+            position: relative;
+            margin-bottom: 18px;
+        }
 
-.day{
-    position:relative;
-    margin-bottom:18px;
-}
+        .circle {
+            position: absolute;
+            left: -52px;
+            top: 10px;
 
-.circle{
-    position:absolute;
-    left:-52px;
-    top:10px;
+            width: 34px;
+            height: 34px;
 
-    width:34px;
-    height:34px;
+            border-radius: 50%;
 
-    border-radius:50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+            color: white;
+            font-weight: bold;
+        }
 
-    color:white;
-    font-weight:bold;
-}
+        details {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, .08);
+        }
 
-details{
-    background:white;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-}
+        summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 18px;
+            font-weight: 700;
+            font-size: 17px;
+        }
 
-summary{
-    list-style:none;
-    cursor:pointer;
-    padding:18px;
-    font-weight:700;
-    font-size:17px;
-}
+        summary::-webkit-details-marker {
+            display: none;
+        }
 
-summary::-webkit-details-marker{
-    display:none;
-}
+        .content {
+            padding: 0 20px 20px;
+        }
 
-.content{
-    padding:0 20px 20px;
-}
+        .content ul {
+            margin-left: 20px;
+        }
 
-.content ul{
-    margin-left:20px;
-}
+        .content li {
+            margin: 6px 0;
+        }
 
-.content li{
-    margin:6px 0;
-}
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: #334155;
+            color: white;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
 
-.badge{
-    display:inline-block;
-    padding:6px 12px;
-    border-radius:20px;
-    background:#334155;
-    color:white;
-    font-size:12px;
-    margin-bottom:15px;
-}
+        .content p {
+            white-space: pre-line;
+            line-height: 1.8;
+        }
 
-.content p{
-    white-space:pre-line;
-    line-height:1.8;
-}
+        details {
+            transition: .3s;
+        }
 
-details{
-    transition:.3s;
-}
+        details[open] {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .12);
+        }
 
-details[open]{
-    box-shadow:0 5px 20px rgba(0,0,0,.12);
-}
+        .circle {
+            width: 40px;
+            height: 40px;
+            font-size: 14px;
+        }
 
-.circle{
-    width:40px;
-    height:40px;
-    font-size:14px;
-}
+        /* COLORS */
 
-/* COLORS */
+        .fundamental .circle {
+            background: #2563eb;
+        }
 
-.fundamental .circle{
-    background:#2563eb;
-}
+        .word .circle {
+            background: #10b981;
+        }
 
-.word .circle{
-    background:#10b981;
-}
+        .excel .circle {
+            background: #f59e0b;
+        }
 
-.excel .circle{
-    background:#f59e0b;
-}
+        .ppt .circle {
+            background: #ef4444;
+        }
 
-.ppt .circle{
-    background:#ef4444;
-}
+        .html .circle {
+            background: #e34c26;
+        }
 
-.html .circle{
-    background:#e34c26;
-}
+        .css .circle {
+            background: #264de4;
+        }
 
-.css .circle{
-    background:#264de4;
-}
+        .js .circle {
+            background: #d4a017;
+        }
 
-.js .circle{
-    background:#d4a017;
-}
+        .section-title {
+            margin: 50px 0 20px;
+            font-size: 28px;
+            color: #0f172a;
+        }
 
-.section-title{
-    margin:50px 0 20px;
-    font-size:28px;
-    color:#0f172a;
-}
-
-footer{
-    margin-top:50px;
-    text-align:center;
-    color:#64748b;
-}
-
-</style>
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #64748b;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-<header>
-    <h1>8-Week Computer & Frontend Development Course</h1>
-    <p>For Matric Students | 5 Lectures per Week | Beginner to Frontend Developer</p>
-</header>
+        <header>
+            <h1>8-Week Computer & Frontend Development Course</h1>
+            <p>For Matric Students | 5 Lectures per Week | Beginner to Frontend Developer</p>
+        </header>
 
-<div class="summary">
+        <div class="summary">
 
-    <div class="card">
-        <h3>Week 1-2</h3>
-        <p>Computer Fundamentals & MS Office</p>
-        <strong>1 Week</strong>
+            <div class="card">
+                <h3>Week 1-2</h3>
+                <p>Computer Fundamentals & MS Office</p>
+                <strong>1 Week</strong>
+            </div>
+
+            <div class="card">
+                <h3>Weeks 3-4</h3>
+                <p>HTML Development</p>
+                <strong>2 Weeks</strong>
+            </div>
+
+            <div class="card">
+                <h3>Weeks 5-6</h3>
+                <p>CSS Development</p>
+                <strong>2 Weeks</strong>
+            </div>
+
+            <div class="card">
+                <h3>Weeks 7-8</h3>
+                <p>JavaScript Development</p>
+                <strong>2 Weeks</strong>
+            </div>
+
+            <div class="card">
+                <h3>Week 9</h3>
+                <p>Frontend Capstone Project</p>
+                <strong>1 Week</strong>
+            </div>
+
+        </div>
+        <div class="timeline">
+
+            <h2 class="section-title">Phase 1 - Fundamentals & MS Office</h2>
+
+            <!-- DAYS 1-15 -->
+
+            <script>
+                const phase1 = [
+                    ["Computer Fundamentals: Introduction to Computers", "Hardware, Software, Input Devices, Output Devices, CPU, RAM, Storage"],
+                    ["Windows & File Management", "Desktop, Taskbar, File Explorer, Folders, Copy, Move, Rename"],
+                    ["Internet, Email & Cyber Security", "Google Search, Gmail, Attachments, Passwords, Online Safety"],
+                    ["MS Word Basics", "Interface, Saving, Formatting, Fonts"],
+                    ["Word Formatting", "Paragraphs, Alignment, Spacing, Styles"],
+                    ["Word Tables & Layouts", "Tables, Columns, Lists"],
+                    ["Advanced Word", "Headers, Footers, TOC, Watermarks"],
+                    ["Professional Documents", "CV, Cover Letter, Applications"],
+                    ["Excel Basics", "Workbook, Worksheet, Cells"],
+                    ["Excel Formulas", "SUM, AVERAGE, MIN, MAX, COUNT"],
+                    ["Intermediate Excel", "IF, COUNTIF, Conditional Formatting"],
+                    ["Excel Reports", "Charts, Sorting, Filtering"],
+                    ["PowerPoint Basics", "Slides, Themes, Layouts"],
+                    ["Advanced PowerPoint", "Animations, SmartArt, Charts"],
+                    ["MS Office Final Project", "Complete Word, Excel & PPT Project"]
+                ];
+            </script>
+
+        </div>
+
+        <div id="course"></div>
+
+        <footer>
+            <h3>Final Capstone Project</h3>
+            <p>
+                Build a responsive portfolio website using HTML, CSS and JavaScript.
+            </p>
+        </footer>
+
     </div>
 
-    <div class="card">
-        <h3>Weeks 3-4</h3>
-        <p>HTML Development</p>
-        <strong>2 Weeks</strong>
-    </div>
+    <script>
 
-    <div class="card">
-        <h3>Weeks 5-6</h3>
-        <p>CSS Development</p>
-        <strong>2 Weeks</strong>
-    </div>
+        const course = document.getElementById("course");
 
-    <div class="card">
-        <h3>Weeks 7-8</h3>
-        <p>JavaScript Development</p>
-        <strong>2 Weeks</strong>
-    </div>
+        const modules = [
 
-    <div class="card">
-        <h3>Week 9</h3>
-        <p>Frontend Capstone Project</p>
-        <strong>1 Week</strong>
-    </div>
+            {
+                title: "Week 1 & 2 - Computer Fundamentals & MS Office",
+                className: "fundamental",
+                start: 1,
+                days: [
 
-</div>
-<div class="timeline">
-
-<h2 class="section-title">Phase 1 - Fundamentals & MS Office</h2>
-
-<!-- DAYS 1-15 -->
-
-<script>
-const phase1 = [
-["Computer Fundamentals: Introduction to Computers","Hardware, Software, Input Devices, Output Devices, CPU, RAM, Storage"],
-["Windows & File Management","Desktop, Taskbar, File Explorer, Folders, Copy, Move, Rename"],
-["Internet, Email & Cyber Security","Google Search, Gmail, Attachments, Passwords, Online Safety"],
-["MS Word Basics","Interface, Saving, Formatting, Fonts"],
-["Word Formatting","Paragraphs, Alignment, Spacing, Styles"],
-["Word Tables & Layouts","Tables, Columns, Lists"],
-["Advanced Word","Headers, Footers, TOC, Watermarks"],
-["Professional Documents","CV, Cover Letter, Applications"],
-["Excel Basics","Workbook, Worksheet, Cells"],
-["Excel Formulas","SUM, AVERAGE, MIN, MAX, COUNT"],
-["Intermediate Excel","IF, COUNTIF, Conditional Formatting"],
-["Excel Reports","Charts, Sorting, Filtering"],
-["PowerPoint Basics","Slides, Themes, Layouts"],
-["Advanced PowerPoint","Animations, SmartArt, Charts"],
-["MS Office Final Project","Complete Word, Excel & PPT Project"]
-];
-</script>
-
-</div>
-
-<div id="course"></div>
-
-<footer>
-    <h3>Final Capstone Project</h3>
-    <p>
-        Build a responsive portfolio website using HTML, CSS and JavaScript.
-    </p>
-</footer>
-
-</div>
-
-<script>
-
-const course = document.getElementById("course");
-
-const modules = [
-
-{
-title:"Week 1 & 2 - Computer Fundamentals & MS Office",
-className:"fundamental",
-start:1,
-days:[
-
-["Computer Fundamentals",
-`
+                    ["Computer Fundamentals",
+                        `
 Introduction to computers, hardware and software, input and output devices,
-CPU, RAM, storage devices, operating systems, Windows basics,
-files and folders, internet fundamentals, email usage, cloud storage,
-cybersecurity awareness, strong passwords and online safety practices.
+CPU, RAM, storage devices, Windows basics, Desktop, Taskbar, Start Menu ,
+files and folders, internet fundamentals, email usage,
+cybersecurity awareness and strong passwords .
 `],
 
-["Computer Fundamentals Assignment",
-`
+                    ["Computer Fundamentals Assignment",
+                        `
 Create a Computer System Portfolio:
 1. Draw and label all major hardware components.
 2. Compare hardware vs software.
@@ -302,8 +301,8 @@ Create a Computer System Portfolio:
 4. Perform a typing speed test and submit results.
 `],
 
-["Microsoft Word",
-`
+                    ["Microsoft Word",
+                        `
 Word interface, creating documents, text formatting,
 font styles, paragraph formatting, page setup,
 tables, images, shapes, headers, footers,
@@ -311,8 +310,8 @@ page numbering, templates and document design.
 Advanced Topic: Mail Merge.
 `],
 
-["MS Word Assignment",
-`
+                    ["MS Word Assignment",
+                        `
 Create:
 1. Professional Resume/CV.
 2. Formal Job Application.
@@ -320,8 +319,8 @@ Create:
 table of contents and page numbering.
 `],
 
-["Microsoft Excel",
-`
+                    ["Microsoft Excel",
+                        `
 Workbook and worksheet structure,
 rows, columns and cells,
 data formatting,
@@ -334,8 +333,8 @@ charts and dashboards.
 Advanced Topic: VLOOKUP / XLOOKUP and Pivot Tables.
 `],
 
-["MS Excel Assignment",
-`
+                    ["MS Excel Assignment",
+                        `
 Create a Student Management Dashboard:
 - Attendance Sheet
 - Marks Sheet
@@ -345,8 +344,8 @@ Create a Student Management Dashboard:
 - Conditional Formatting
 `],
 
-["Microsoft PowerPoint",
-`
+                    ["Microsoft PowerPoint",
+                        `
 Creating presentations,
 themes and templates,
 slide layouts,
@@ -358,8 +357,8 @@ presentation design principles.
 Advanced Topic: Slide Master and Interactive Navigation.
 `],
 
-["MS PowerPoint Assignment",
-`
+                    ["MS PowerPoint Assignment",
+                        `
 Create a professional 10-slide presentation
 about any technology topic.
 Include:
@@ -370,17 +369,17 @@ Include:
 - Interactive Navigation Buttons
 `]
 
-]
-},
+                ]
+            },
 
-{
-title:"Week 3 & 4 - HTML Development",
-className:"html",
-start:2,
-days:[
+            {
+                title: "Week 3 & 4 - HTML Development",
+                className: "html",
+                start: 2,
+                days: [
 
-["Introduction to Web Development",
-`
+                    ["Introduction to Web Development",
+                        `
 How websites work,
 internet basics,
 domains,
@@ -389,8 +388,8 @@ web browsers,
 frontend vs backend development.
 `],
 
-["HTML Document Structure",
-`
+                    ["HTML Document Structure",
+                        `
 DOCTYPE declaration,
 html,
 head,
@@ -400,8 +399,8 @@ title,
 comments and code organization.
 `],
 
-["Text Elements",
-`
+                    ["Text Elements",
+                        `
 Headings,
 paragraphs,
 line breaks,
@@ -411,8 +410,8 @@ quotes,
 preformatted text.
 `],
 
-["Links & Navigation",
-`
+                    ["Links & Navigation",
+                        `
 Anchor tags,
 absolute links,
 relative links,
@@ -420,8 +419,8 @@ navigation systems,
 internal page linking.
 `],
 
-["Images & Multimedia",
-`
+                    ["Images & Multimedia",
+                        `
 Images,
 image attributes,
 audio,
@@ -430,8 +429,8 @@ embedding content,
 optimization basics.
 `],
 
-["Lists & Tables",
-`
+                    ["Lists & Tables",
+                        `
 Ordered lists,
 unordered lists,
 nested lists,
@@ -440,8 +439,8 @@ table headers,
 table structure.
 `],
 
-["Forms & User Input",
-`
+                    ["Forms & User Input",
+                        `
 Input fields,
 labels,
 radio buttons,
@@ -452,8 +451,8 @@ buttons,
 form validation attributes.
 `],
 
-["Semantic HTML",
-`
+                    ["Semantic HTML",
+                        `
 Header,
 nav,
 section,
@@ -464,8 +463,8 @@ main,
 accessibility basics.
 `],
 
-["HTML Attributes",
-`
+                    ["HTML Attributes",
+                        `
 Class,
 id,
 title,
@@ -476,16 +475,16 @@ target,
 data attributes and best practices.
 `],
 
-["Website Structure",
-`
+                    ["Website Structure",
+                        `
 Multi-page websites,
 folder organization,
 file naming conventions,
 project setup.
 `],
 
-["Mini Project",
-`
+                    ["Mini Project",
+                        `
 Create a Personal Profile Website
 containing multiple pages,
 images,
@@ -493,8 +492,8 @@ tables,
 lists and forms.
 `],
 
-["Intermediate HTML Project",
-`
+                    ["Intermediate HTML Project",
+                        `
 Create a complete Educational Website
 with Home,
 About,
@@ -502,25 +501,25 @@ Courses,
 Contact and Registration pages.
 `]
 
-]
-},
+                ]
+            },
 
-{
-title:"Week 5 & 6 - CSS Development",
-className:"css",
-start:4,
-days:[
+            {
+                title: "Week 5 & 6 - CSS Development",
+                className: "css",
+                start: 4,
+                days: [
 
-["Introduction to CSS",
-`
+                    ["Introduction to CSS",
+                        `
 Inline,
 internal and external CSS,
 selectors,
 specificity and cascading rules.
 `],
 
-["Colors & Typography",
-`
+                    ["Colors & Typography",
+                        `
 Fonts,
 Google Fonts,
 font families,
@@ -529,8 +528,8 @@ text styling,
 color systems.
 `],
 
-["Box Model",
-`
+                    ["Box Model",
+                        `
 Margin,
 padding,
 border,
@@ -538,16 +537,16 @@ content area,
 box sizing.
 `],
 
-["Backgrounds & Effects",
-`
+                    ["Backgrounds & Effects",
+                        `
 Background colors,
 images,
 gradients,
 opacity and overlays.
 `],
 
-["CSS Selectors",
-`
+                    ["CSS Selectors",
+                        `
 Element selectors,
 class selectors,
 ID selectors,
@@ -555,16 +554,16 @@ attribute selectors,
 pseudo classes.
 `],
 
-["Flexbox Layout",
-`
+                    ["Flexbox Layout",
+                        `
 Flexible layouts,
 alignment,
 spacing,
 responsive row and column structures.
 `],
 
-["CSS Grid",
-`
+                    ["CSS Grid",
+                        `
 Grid containers,
 rows,
 columns,
@@ -572,61 +571,61 @@ template areas,
 modern layouts.
 `],
 
-["Positioning",
-`
+                    ["Positioning",
+                        `
 Static,
 relative,
 absolute,
 fixed and sticky positioning.
 `],
 
-["Responsive Design",
-`
+                    ["Responsive Design",
+                        `
 Mobile-first approach,
 fluid layouts,
 responsive images.
 `],
 
-["Media Queries",
-`
+                    ["Media Queries",
+                        `
 Breakpoints,
 tablet layouts,
 mobile layouts,
 desktop optimization.
 `],
 
-["Transitions & Animations",
-`
+                    ["Transitions & Animations",
+                        `
 Hover effects,
 keyframes,
 smooth animations,
 interactive UI effects.
 `],
 
-["CSS Project",
-`
+                    ["CSS Project",
+                        `
 Design a complete responsive landing page
 for a business or educational institute.
 `]
 
-]
-},
+                ]
+            },
 
-{
-title:"Week 7 & 8 - JavaScript Development",
-className:"js",
-start:6,
-days:[
+            {
+                title: "Week 7 & 8 - JavaScript Development",
+                className: "js",
+                start: 6,
+                days: [
 
-["JavaScript Introduction",
-`
+                    ["JavaScript Introduction",
+                        `
 What JavaScript is,
 how browsers execute code,
 adding JavaScript to webpages.
 `],
 
-["Variables & Data Types",
-`
+                    ["Variables & Data Types",
+                        `
 let,
 const,
 strings,
@@ -636,165 +635,165 @@ null,
 undefined.
 `],
 
-["Operators",
-`
+                    ["Operators",
+                        `
 Arithmetic,
 comparison,
 logical operators and expressions.
 `],
 
-["Conditions",
-`
+                    ["Conditions",
+                        `
 if,
 else,
 else-if,
 switch statements.
 `],
 
-["Loops",
-`
+                    ["Loops",
+                        `
 for loops,
 while loops,
 loop control statements.
 `],
 
-["Functions",
-`
+                    ["Functions",
+                        `
 Function declarations,
 parameters,
 return values,
 arrow functions.
 `],
 
-["Arrays",
-`
+                    ["Arrays",
+                        `
 Array creation,
 methods,
 iteration,
 common operations.
 `],
 
-["Objects",
-`
+                    ["Objects",
+                        `
 Object properties,
 methods,
 real-world data structures.
 `],
 
-["DOM Fundamentals",
-`
+                    ["DOM Fundamentals",
+                        `
 Selecting elements,
 querySelector,
 changing content and styles.
 `],
 
-["DOM Manipulation",
-`
+                    ["DOM Manipulation",
+                        `
 Creating elements,
 removing elements,
 updating content dynamically.
 `],
 
-["Events",
-`
+                    ["Events",
+                        `
 Click events,
 keyboard events,
 form events,
 event listeners.
 `],
 
-["Form Validation",
-`
+                    ["Form Validation",
+                        `
 Required fields,
 custom validation,
 error handling.
 `],
 
-["Mini Project",
-`
+                    ["Mini Project",
+                        `
 Build an interactive calculator,
 color changer,
 or quiz application.
 `],
 
-["JavaScript Project",
-`
+                    ["JavaScript Project",
+                        `
 Build a Student Result Calculator
 with grading system,
 validation and dynamic output.
 `]
 
-]
-},
+                ]
+            },
 
-{
-title:"Week 9 - Final Frontend Development Project",
-className:"js",
-start:8,
-days:[
+            {
+                title: "Week 9 - Final Frontend Development Project",
+                className: "js",
+                start: 8,
+                days: [
 
-["Capstone Project Planning",
-`
+                    ["Capstone Project Planning",
+                        `
 Project requirements,
 wireframing,
 layout planning,
 content structure.
 `],
 
-["Frontend Website Development",
-`
+                    ["Frontend Website Development",
+                        `
 Combine HTML,
 CSS and JavaScript
 into a complete professional website.
 `],
 
-["Responsive Design Integration",
-`
+                    ["Responsive Design Integration",
+                        `
 Ensure the project works on
 mobile,
 tablet and desktop devices.
 `],
 
-["Interactive Features",
-`
+                    ["Interactive Features",
+                        `
 Navigation menus,
 forms,
 animations,
 validation and dynamic elements.
 `],
 
-["Final Project Submission",
-`
+                    ["Final Project Submission",
+                        `
 Deploy and present the project.
 Explain structure,
 design choices and JavaScript functionality.
 `],
 
-["Final Assessment & Viva",
-`
+                    ["Final Assessment & Viva",
+                        `
 Practical evaluation,
 code review,
 project presentation and certification assessment.
 `]
 
-]
-}
+                ]
+            }
 
-];
-modules.forEach(module => {
+        ];
+        modules.forEach(module => {
 
-    const title = document.createElement("h2");
-    title.className = "section-title";
-    title.innerText = module.title;
+            const title = document.createElement("h2");
+            title.className = "section-title";
+            title.innerText = module.title;
 
-    course.appendChild(title);
+            course.appendChild(title);
 
-    const timeline = document.createElement("div");
-    timeline.className = "timeline";
+            const timeline = document.createElement("div");
+            timeline.className = "timeline";
 
-    module.days.forEach((item,index)=>{
+            module.days.forEach((item, index) => {
 
-        timeline.innerHTML += `
+                timeline.innerHTML += `
         <div class="day ${module.className}">
 
             <div class="circle">${module.start}</div>
@@ -825,31 +824,32 @@ modules.forEach(module => {
 
         </div>
         `;
-    });
+            });
 
-    course.appendChild(timeline);
+            course.appendChild(timeline);
 
-});
+        });
 
-document.addEventListener("click",function(e){
+        document.addEventListener("click", function (e) {
 
-if(e.target.tagName==="SUMMARY"){
+            if (e.target.tagName === "SUMMARY") {
 
-const current=e.target.parentElement;
+                const current = e.target.parentElement;
 
-document.querySelectorAll("details").forEach(item=>{
+                document.querySelectorAll("details").forEach(item => {
 
-if(item!==current){
-item.removeAttribute("open");
-}
+                    if (item !== current) {
+                        item.removeAttribute("open");
+                    }
 
-});
+                });
 
-}
+            }
 
-});
+        });
 
-</script>
+    </script>
 
 </body>
+
 </html>
